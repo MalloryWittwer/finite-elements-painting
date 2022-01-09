@@ -1,7 +1,5 @@
 from skimage.transform import resize
 import dash
-import dash_daq as daq
-from dash.exceptions import PreventUpdate
 from dash import html, dcc
 import dash_bootstrap_components as dbc
 from dash.dependencies import Input, Output
