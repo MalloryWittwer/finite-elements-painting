@@ -1,0 +1,151 @@
+body {
+  background: #f8edf2;
+  margin: 0;
+  padding: 0;
+}
+
+#main-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#footer-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#code, .copyright {
+  padding: 20px;
+  padding-top: 60px;
+  margin: 0;
+  font-size: 16px;
+  text-decoration: none;
+  color: #866574;
+}
+
+#code:hover {
+  color: #994569;
+}
+
+#info-container {
+  margin: 20px;
+  padding: 20px;
+  width: 500px;
+  /* flex: 0 0 40%; */
+}
+
+h1 {
+  font-size: 24px;
+  text-transform: uppercase;
+  color: #994569;
+}
+
+#info-container p {
+  font-size: 16px;
+  color: #866574;
+  text-align: justify;
+}
+
+/* #canvas-container > div > div {
+    width: 700px !important;
+    height: 600px !important;
+    background-color: red;
+} */
+
+#canvas-container {
+  width: 498px;
+  height: 500px;
+  position: relative;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 0px 10px #8a777f;
+  border-radius: 5px;
+  overflow: hidden;
+  margin: 20px;
+  margin-top: 60px;
+}
+
+.gJuplL {
+  background: #994569 !important;
+}
+
+#canvas-container button {
+  color: #866574 !important;
+  font-size: 1.5rem;
+  margin: 10px;
+  border-radius: 5px;;
+}
+
+#switch-container button {
+  color: auto;
+  font-size: auto;
+  margin: auto;
+  border-radius: auto;
+}
+
+#controls-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 70%;
+  position: relative;
+  bottom: 70px;
+  align-self: flex-end;
+}
+
+button[title="Save"] {
+  visibility: hidden;
+}
+
+button[title="Save"]::after {
+  content: 'Start';
+  visibility: visible;
+  padding: 15px 30px;
+  border: 1px solid #866574;
+  border-radius: 5px;
+  position: relative;
+  right: 20px;
+}
+
+/* #switch-container {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  margin: 0px 20px;
+} */
+
+/* #heat-label {
+  padding: 0 10px;
+  margin: 0;
+  font-size: 16px;
+  color: #866574;
+} */
+
+#reset-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 30px;
+  border: 1px solid #866574;
+  border-radius: 5px;
+}
+
+#radio-items {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #866574
+}
+
+#radio-items input {
+  background-color: #994569 !important;
+  padding: 5px;
+}
