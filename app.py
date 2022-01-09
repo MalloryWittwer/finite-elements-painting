@@ -55,7 +55,7 @@ def serve_layout():
 
         html.Div([
             html.P('\u00a9 Mallory Wittwer, 2022', className="copyright"),
-            html.A("View code", id="code", href="#", target="_blank"),
+            html.A("View code", id="code", href="https://github.com/MalloryWittwer/finite-elements-painting", target="_blank"),
         ], id="footer-container"),
         
         dcc.Interval(id='interval', interval=200, n_intervals=0),
