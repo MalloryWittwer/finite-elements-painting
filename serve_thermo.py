@@ -5,8 +5,8 @@ class Simulation:
     
     def __init__(self):       
         self.init_temp = 1
-        self.n_x = 60
-        self.n_y = 60
+        self.n_x = 40
+        self.n_y = 40
         
         self.reset()
         
@@ -74,7 +74,6 @@ class Simulation:
                 
             # Heat sources
             if len(self.heat_sources):
-                # print('HEAT SOURCE LENGTH:', len(self.heat_sources))
                 for hs in self.heat_sources:
                     if (k == hs['loc']):
                         C[k] = self.T[k]*(1-4*dt) + dt*(self.T[k+1] + self.T[k-1] + self.T[k+self.n_x] + self.T[k-self.n_x]) + dt * hs['intensity']

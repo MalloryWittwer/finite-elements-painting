@@ -40,10 +40,6 @@ def serve_layout():
                 ),
                 html.Div([
                     html.Button('Reset', id="reset-btn", n_clicks=0),
-                    # html.Div([
-                    #     html.P('Heat source', id="heat-label"),
-                    #     daq.BooleanSwitch(id='sign', on=True),
-                    # ], id='switch-container'),
                     dcc.RadioItems(
                         options=[
                             {'label': 'Source', 'value': 1},
@@ -54,11 +50,11 @@ def serve_layout():
         ], id="main-wrapper"),
 
         html.Div([
-            html.P('\u00a9 Mallory Wittwer, 2022', className="copyright"),
+            html.P('By Mallory Wittwer, 2022', className="copyright"),
             html.A("View code", id="code", href="https://github.com/MalloryWittwer/finite-elements-painting", target="_blank"),
         ], id="footer-container"),
         
-        dcc.Interval(id='interval', interval=200, n_intervals=0),
+        dcc.Interval(id='interval', interval=800, n_intervals=0),
         html.Div(id="void", style={ 'display': 'none' }),
         html.Div(id="void2", style={ 'display': 'none' }),
     ], id="main")
@@ -79,10 +75,8 @@ def update_simulation(n):
     return im
 
 @app.callback(
-    # Output('heat-label', 'children'),
     Output('void2', 'children'),
     Input('canvas', 'json_data'),
-    # Input("sign", "on"),
     Input("radio-items", "value"),
 )
 def update(data_string, sign):    
@@ -90,8 +84,8 @@ def update(data_string, sign):
         parse_jsonstring(data_string), 
         (SIMULATION.n_x, SIMULATION.n_y)
     )
-    SIMULATION.set_heat_source_mask(mask, sign) #1 if sign else -1)
-    return []#f"Heat {'source' if sign else 'sink'}"
+    SIMULATION.set_heat_source_mask(mask, sign)
+    return []
 
 @app.callback(
     Output('void', 'children'),
